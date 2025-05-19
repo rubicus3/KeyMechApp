@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeView">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/r7zwqe7e46ec"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="#FFFFFF"
+        android:paddingTop="10dp"
+        android:paddingBottom="53dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/rf4zvmcgcsaf"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Популярные переключатели"
+            />
+        <LinearLayout
+            android:id="@+id/ri4qg33iwzh"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="17dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="vertical"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/rhiyvs4w3g4"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Избранные товары"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="17dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginHorizontal="10dp"
+            android:orientation="vertical"/>
+    </LinearLayout>
+</FrameLayout>

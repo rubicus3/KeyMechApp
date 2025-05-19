@@ -59,6 +59,6 @@ public class SwtichItemCard extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_swtich_card, container, false);
+        return inflater.inflate(R.layout.fragment_swtich_item_card, container, false);
     }
 }

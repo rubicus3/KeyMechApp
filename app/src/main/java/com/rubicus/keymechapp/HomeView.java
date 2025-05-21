@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -51,17 +52,8 @@ public class HomeView extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8000")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(httpClient.build())
-                .build();
 
-        KeyMechService service = retrofit.create(KeyMechService.class);
-        Call<Switch> callAsync = service.getSwitch(1);
-
-        callAsync.enqueue(new Callback<Switch>() {
+        KeyMechServiceGenerator.service.getSwitch(1).enqueue(new Callback<Switch>() {
             @Override
             public void onResponse(Call<Switch> call, Response<Switch> response) {
                 Switch switch_ = response.body();
@@ -80,4 +72,6 @@ public class HomeView extends Fragment {
         });
 
     }
+
+
 }

@@ -1,5 +1,6 @@
 package com.rubicus.keymechapp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -26,17 +27,17 @@ public interface KeyMechService {
     );
 
     @GET("/get_keyboard_list")
-    public Call<List<Keyboard>> getKeyboards(
+    public Call<ArrayList<Keyboard>> getKeyboards(
         @Query("page") int page
     );
 
     @GET("/get_switch_list")
-    public Call<List<Keyboard>> getSwitches(
+    public Call<ArrayList<Switch>> getSwitches(
         @Query("page") int page
     );
 
     @GET("/get_keycap_list")
-    public Call<List<Keyboard>> getKeycaps(
+    public Call<ArrayList<Keycap>> getKeycaps(
         @Query("page") int page
     );
 

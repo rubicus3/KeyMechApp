@@ -75,9 +75,9 @@
         android:id="@+id/nav_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#586378"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottom_nav"
+
         />
 
 </LinearLayout>

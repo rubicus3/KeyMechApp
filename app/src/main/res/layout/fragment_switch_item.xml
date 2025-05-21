@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rh8e482wwk4e"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingVertical="13dp"
+    android:paddingHorizontal="15dp"
+    android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/switch_item_image_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="20dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="fitXY"
+            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingVertical="4dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/switch_item_short_title"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_marginBottom="5dp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Cherry MX Speed Silver"
+                />
+            <TextView
+                android:id="@+id/switch_item_keywords"
+                android:textColor="#7E7E7E"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Linear 45g"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="11dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/switch_item_price"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="40 ₽"
+                />
+        </LinearLayout>
+
+</LinearLayout>

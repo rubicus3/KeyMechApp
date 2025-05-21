@@ -23,11 +23,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
-        FrameLayout frameLayout = findViewById(R.id.main_navigation_layout);
-
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        fragmentManager.beginTransaction().add(R.id.main_navigation_layout, HomeView.class, null).commit();
+        fragmentManager.beginTransaction().replace(R.id.main_navigation_layout, CatalogPage.class, null).commit();
     }
 }

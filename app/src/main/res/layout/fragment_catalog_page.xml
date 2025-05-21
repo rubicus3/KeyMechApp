@@ -46,6 +46,8 @@
                         android:scaleType="fitXY"
                         />
                     <TextView
+                        style="@style/textRegular"
+
                         android:id="@+id/rh1vxlsd8rak"
                         android:textColor="#000000"
                         android:textSize="14sp"
@@ -78,6 +80,8 @@
                         android:scaleType="fitXY"
                         />
                     <TextView
+                        style="@style/textRegular"
+
                         android:id="@+id/rwlcqmavkj2j"
                         android:textColor="#000000"
                         android:textSize="14sp"
@@ -121,6 +125,8 @@
                         android:scaleType="fitXY"
                         />
                     <TextView
+                        style="@style/textRegular"
+
                         android:id="@+id/rxadn5lywhjg"
                         android:textColor="#000000"
                         android:textSize="14sp"
@@ -134,10 +140,12 @@
                         />
                 </LinearLayout>
                 <LinearLayout
+
                     android:id="@+id/catalog_item_4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+
                     android:background="?android:attr/selectableItemBackground"
                     android:paddingVertical="10dp"
                     android:orientation="vertical">
@@ -152,6 +160,7 @@
                         android:scaleType="fitXY"
                         />
                     <TextView
+                        style="@style/textRegular"
                         android:id="@+id/r1hrj6gtppuy"
                         android:textColor="#000000"
                         android:textSize="14sp"

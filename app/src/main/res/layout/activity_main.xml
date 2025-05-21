@@ -22,23 +22,26 @@
             android:layout_width="34dp"
             android:layout_height="34dp"
             android:layout_marginEnd="6dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/arrow_left"
             android:scaleType="fitXY"
-            />
+            app:tint="@color/white"
+            android:padding="3dp"/>
         <LinearLayout
-            android:id="@+id/rtvylgm4aypb"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:layout_marginEnd="6dp"
+            android:background="@color/onPrimary"
             android:orientation="horizontal">
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ronk58vpr9w"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginHorizontal="5dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/magnify"
+                app:tint="@color/white"
+                android:padding="3dp"
                 android:scaleType="fitXY"
                 />
             <TextView
@@ -54,14 +57,20 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginEnd="5dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/filter"
+                app:tint="@color/white"
+                android:padding="3dp"
+
                 android:scaleType="fitXY"
                 />
         </LinearLayout>
         <ImageView
             android:layout_width="34dp"
             android:layout_height="34dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/cart"
+            app:tint="@color/white"
+            android:padding="3dp"
+
             android:scaleType="fitXY"
             />
     </LinearLayout>
@@ -77,7 +86,11 @@
         android:layout_height="wrap_content"
         app:labelVisibilityMode="unlabeled"
         app:menu="@menu/bottom_nav"
-
+        android:background="@color/primary"
+        app:itemIconTint="@color/white"
+        android:paddingBottom="0dp"
+        app:itemPaddingTop="0dp"
+        app:itemPaddingBottom="0dp"
         />
 
 </LinearLayout>

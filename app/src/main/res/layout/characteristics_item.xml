@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rbf7axuyz3gd"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_characteristics_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plate mount"
+            android:layout_weight="0"
+
+            android:textColor="#000000"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_weight="1"
+            android:layout_margin="1dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher"
+            android:background="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/text_characteristics_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="MX1A-51NN"
+            android:textColor="#000000"
+            android:textSize="14sp" />
+</LinearLayout>

@@ -1,14 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    android:paddingTop="15dp"
     tools:context=".ProductPage">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
+        android:id="@+id/rz62t4oyoz5"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/rqadmgawtd7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/image_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_placeholder" />
+
+                <LinearLayout
+                    android:id="@+id/ry92zeriy91i"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingVertical="5dp">
+
+                    <TextView
+                        style="@style/textSubhead"
+                        android:id="@+id/r6jbq9x3b7a6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="CHERRY LINEAR"
+                        android:textColor="#7E7E7E"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        style="@style/textDisplay2"
+                        android:id="@+id/text_product_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Cherry MX Speed Silver 45g Linear Switch"
+                        android:textColor="#000000"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        style="@style/textRegular"
+                        android:id="@+id/text_product_pice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="40 ₽"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:orientation="vertical"></LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="#CAC4D0"
+                    android:orientation="vertical"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical"
+                    android:paddingVertical="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/rgvha911u4xr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/textDisplay2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Описание"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/textRegular"
+                        android:id="@+id/text_product_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:text="Plate Mount MX1A-51NN\nPlate Mount RGB MX1A-51NA\nPCB Mount MX1A-51NB\nPCB Mount RGB MX1A-51NB\n45g actuation force\n1.20mm pretravel\n3.40mm total travel\nPOM stem\nNylon top and bottom housing\nStainless steel spring"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="#CAC4D0"
+                    android:orientation="vertical"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical"
+                    android:paddingVertical="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/textDisplay2"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Характеристики"
+                            android:textColor="#000000"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/text_product_characteristics_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="15dp"
+                        android:orientation="vertical"
+                        android:text="Plate Mount MX1A-51NN\nPlate Mount RGB MX1A-51NA\nPCB Mount MX1A-51NB\nPCB Mount RGB MX1A-51NB\n45g actuation force\n1.20mm pretravel\n3.40mm total travel\nPOM stem\nNylon top and bottom housing\nStainless steel spring"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/rto3mke81vv8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F7F7F7"
+        android:elevation="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="13dp"
+        android:paddingVertical="11dp">
+
+        <LinearLayout
+            android:id="@+id/r9c3zkk0lfdw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/bfgasdgdfbafds"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingVertical="5dp">
+
+            <TextView
+                android:id="@+id/r3shuipqcq6h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="-"
+                android:textColor="#000000"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/rlhwfl7depso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="18dp"
+                android:text="+"
+                android:textColor="#000000"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:background="@drawable/abwfveawefvwvfewfve"
+
+            android:backgroundTint="@color/accent"
+            android:padding="10dp">
+            <ImageView
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/cart_outline"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

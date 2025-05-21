@@ -12,7 +12,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="20dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/ic_placeholder"
             android:scaleType="fitXY"
             />
         <LinearLayout
@@ -23,6 +23,8 @@
             android:layout_marginEnd="20dp"
             android:orientation="vertical">
             <TextView
+                style="@style/textRegular"
+
                 android:id="@+id/switch_item_short_title"
                 android:textColor="#000000"
                 android:textSize="14sp"
@@ -32,6 +34,8 @@
                 android:text="Cherry MX Speed Silver"
                 />
             <TextView
+                style="@style/textSubhead"
+
                 android:id="@+id/switch_item_keywords"
                 android:textColor="#7E7E7E"
                 android:textSize="14sp"
@@ -47,6 +51,8 @@
             android:paddingHorizontal="11dp"
             android:orientation="vertical">
             <TextView
+                style="@style/textRegular"
+
                 android:id="@+id/switch_item_price"
                 android:textColor="#000000"
                 android:textSize="14sp"

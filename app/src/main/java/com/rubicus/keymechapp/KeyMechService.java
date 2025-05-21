@@ -13,17 +13,17 @@ import retrofit2.http.Query;
 public interface KeyMechService {
     @GET("/get_keyboard")
     public Call<Keyboard> getKeyboard(
-            @Query("id") int id
+        @Query("id") int id
     );
 
     @GET("/get_switch")
     public Call<Switch> getSwitch(
-            @Query("id") int id
+        @Query("id") int id
     );
 
     @GET("/get_keycap")
     public Call<Keycap> getKeycap(
-            @Query("id") int id
+        @Query("id") int id
     );
 
     @GET("/get_keyboard_list")
@@ -39,6 +39,10 @@ public interface KeyMechService {
     @GET("/get_keycap_list")
     public Call<ArrayList<Keycap>> getKeycaps(
         @Query("page") int page
+    );
+
+    @GET("/get_popular_switches")
+    public Call<ArrayList<Switch>> getPopularSwitches(
     );
 
 

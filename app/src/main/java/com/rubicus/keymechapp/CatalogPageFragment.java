@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +11,18 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CatalogPage#newInstance} factory method to
+ * Use the {@link CatalogPageFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CatalogPage extends Fragment {
+public class CatalogPageFragment extends Fragment {
 
 
-    public CatalogPage() {
+    public CatalogPageFragment() {
     }
 
 
-    public static CatalogPage newInstance() {
-        return new CatalogPage();
+    public static CatalogPageFragment newInstance() {
+        return new CatalogPageFragment();
     }
 
     @Override

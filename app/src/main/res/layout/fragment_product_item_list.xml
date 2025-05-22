@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/list"
-    android:name="com.rubicus.keymechapp.SwichItemListFragment"
+    android:name="com.rubicus.keymechapp.ProductItemListFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
     android:background="@color/white"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".SwichItemListFragment"
-    tools:listitem="@layout/fragment_switch_item" />
+    tools:context=".ProductItemListFragment"
+    tools:listitem="@layout/fragment_product_item" />

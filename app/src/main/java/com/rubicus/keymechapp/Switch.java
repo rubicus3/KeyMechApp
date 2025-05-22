@@ -11,10 +11,6 @@ public class Switch extends Product {
         return switch_type + " " + actuation_force;
     }
 
-    public String getPrice() {
-        return String.format("%.2f", price * 80.63) + " ₽";
-    }
-
     @NonNull
     @Override
     public String toString() {

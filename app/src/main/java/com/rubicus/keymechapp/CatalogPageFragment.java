@@ -41,13 +41,27 @@ public class CatalogPageFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.catalog_item_1).setOnClickListener(v -> onKeycapCatalogClicked());
-
+        view.findViewById(R.id.catalog_item_2).setOnClickListener(v -> navigateTo(SwichItemListFragment.class));
+        view.findViewById(R.id.catalog_item_4).setOnClickListener(v -> navigateTo(ProductItemListFragment.class, 0));
+        view.findViewById(R.id.catalog_item_1).setOnClickListener(v -> navigateTo(ProductItemListFragment.class, 1));
 
 
     }
+    private void navigateTo(Class<? extends Fragment> class_) {
+        getParentFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_navigation_layout ,class_, null)
+                .commit();
 
-    private void onKeycapCatalogClicked() {
-        getParentFragmentManager().beginTransaction().replace(R.id.main_navigation_layout, SwichItemListFragment.class, null).commit();
+    }
+
+    private void navigateTo(Class<? extends Fragment> class_, Integer listType) {
+        Bundle bundle = new Bundle();
+        bundle.putInt("list-type", listType);
+        getParentFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_navigation_layout ,class_, bundle)
+                .commit();
+
     }
 }

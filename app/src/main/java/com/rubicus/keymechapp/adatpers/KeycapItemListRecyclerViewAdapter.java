@@ -1,15 +1,20 @@
 package com.rubicus.keymechapp.adatpers;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.databinding.FragmentProductItemBinding;
+import com.rubicus.keymechapp.fragments.ProductPageFragment;
 import com.rubicus.keymechapp.helper.Keycap;
+import com.rubicus.keymechapp.helper.ProductType;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -46,6 +51,18 @@ public class KeycapItemListRecyclerViewAdapter extends RecyclerView.Adapter<Keyc
                 .fit()
                 .into(holder.mImageView);
 
+        holder.mLayout.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+
+            bundle.putInt(ProductPageFragment.PRODUCT_ID, holder.mItem.id);
+            bundle.putSerializable(ProductPageFragment.PRODUCT_TYPE, ProductType.Keycap);
+
+            ((FragmentActivity) v.getContext())
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_navigation_layout, ProductPageFragment.class, bundle)
+                    .commit();
+        });
     }
 
     @Override
@@ -61,6 +78,8 @@ public class KeycapItemListRecyclerViewAdapter extends RecyclerView.Adapter<Keyc
 
         public Keycap mItem;
 
+        public final LinearLayout mLayout;
+
 
         public ViewHolder(FragmentProductItemBinding binding) {
             super(binding.getRoot());
@@ -68,6 +87,7 @@ public class KeycapItemListRecyclerViewAdapter extends RecyclerView.Adapter<Keyc
             mKeywordsView = binding.textProductItemKeywords;
             mPriceView = binding.textProductItmePrice;
             mImageView = binding.imageProductItem;
+            mLayout = binding.productItemLayout;
 
         }
 

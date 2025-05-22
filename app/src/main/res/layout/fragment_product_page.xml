@@ -32,7 +32,7 @@
                     android:id="@+id/image_product"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
-                    android:scaleType="fitXY"
+                    android:scaleType="fitCenter"
                     android:src="@drawable/ic_placeholder" />
 
                 <LinearLayout
@@ -44,7 +44,7 @@
 
                     <TextView
                         style="@style/textSubhead"
-                        android:id="@+id/r6jbq9x3b7a6"
+                        android:id="@+id/text_product_keywords"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="15dp"
@@ -154,12 +154,11 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/text_product_characteristics_list"
+                        android:id="@+id/product_characteristics_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="15dp"
                         android:orientation="vertical"
-                        android:text="Plate Mount MX1A-51NN\nPlate Mount RGB MX1A-51NA\nPCB Mount MX1A-51NB\nPCB Mount RGB MX1A-51NB\n45g actuation force\n1.20mm pretravel\n3.40mm total travel\nPOM stem\nNylon top and bottom housing\nStainless steel spring"
                         android:textColor="#000000"
                         android:textSize="14sp" />
                 </LinearLayout>

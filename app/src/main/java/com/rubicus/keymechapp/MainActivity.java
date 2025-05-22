@@ -7,11 +7,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.rubicus.keymechapp.fragments.CatalogPageFragment;
 import com.rubicus.keymechapp.fragments.HomePageFragment;
+import com.rubicus.keymechapp.helper.ProductType;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +47,4 @@ public class MainActivity extends AppCompatActivity {
         });
         bottomNavigationView.setSelectedItemId(R.id.navigation_home);
     }
-
-
 }

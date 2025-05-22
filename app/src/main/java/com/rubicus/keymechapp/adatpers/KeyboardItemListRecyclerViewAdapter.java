@@ -1,15 +1,20 @@
 package com.rubicus.keymechapp.adatpers;
 
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.rubicus.keymechapp.fragments.ProductPageFragment;
 import com.rubicus.keymechapp.helper.Keyboard;
 import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.databinding.FragmentProductItemBinding;
+import com.rubicus.keymechapp.helper.ProductType;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -43,8 +48,20 @@ public class KeyboardItemListRecyclerViewAdapter extends RecyclerView.Adapter<Ke
         Picasso.get()
                 .load("http://10.0.2.2:8080/image/" + mValues.get(position).image_name)
                 .placeholder(R.drawable.ic_placeholder) // Optional
-                .fit()
                 .into(holder.mImageView);
+
+        holder.mLayout.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+
+            bundle.putInt(ProductPageFragment.PRODUCT_ID, holder.mItem.id);
+            bundle.putSerializable(ProductPageFragment.PRODUCT_TYPE, ProductType.Keyboard);
+
+            ((FragmentActivity) v.getContext())
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_navigation_layout, ProductPageFragment.class, bundle)
+                    .commit();
+        });
     }
 
     @Override
@@ -59,6 +76,8 @@ public class KeyboardItemListRecyclerViewAdapter extends RecyclerView.Adapter<Ke
         public final ImageView mImageView;
 
         public Keyboard mItem;
+        public final LinearLayout mLayout;
+
 
 
         public ViewHolder(FragmentProductItemBinding binding) {
@@ -67,7 +86,7 @@ public class KeyboardItemListRecyclerViewAdapter extends RecyclerView.Adapter<Ke
             mKeywordsView = binding.textProductItemKeywords;
             mPriceView = binding.textProductItmePrice;
             mImageView = binding.imageProductItem;
-
+            mLayout = binding.productItemLayout;
         }
 
     }

@@ -73,7 +73,6 @@ public class SwichItemListFragment extends Fragment {
             @Override
             public void onResponse(Call<ArrayList<Switch>> call, Response<ArrayList<Switch>> response) {
                 ArrayList<Switch> arrayList = response.body();
-                Log.d("TAG", "onResponse: " + arrayList);
                 switchArrayList.addAll(arrayList);
                 swichItemListRecyclerViewAdapter.notifyDataSetChanged();
             }

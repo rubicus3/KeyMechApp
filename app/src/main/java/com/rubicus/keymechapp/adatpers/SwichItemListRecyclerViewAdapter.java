@@ -1,13 +1,18 @@
 package com.rubicus.keymechapp.adatpers;
 
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rubicus.keymechapp.R;
+import com.rubicus.keymechapp.fragments.ProductPageFragment;
+import com.rubicus.keymechapp.helper.ProductType;
 import com.rubicus.keymechapp.helper.Switch;
 import com.rubicus.keymechapp.databinding.FragmentSwitchItemBinding;
 import com.squareup.picasso.Picasso;
@@ -43,8 +48,21 @@ public class SwichItemListRecyclerViewAdapter extends RecyclerView.Adapter<Swich
         Picasso.get()
                 .load("http://10.0.2.2:8080/image/" + mValues.get(position).image_name)
                 .placeholder(R.drawable.ic_placeholder) // Optional
-                .fit()
                 .into(holder.mImageView);
+
+        holder.mLayout.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+
+            bundle.putInt(ProductPageFragment.PRODUCT_ID, holder.mItem.id);
+            bundle.putSerializable(ProductPageFragment.PRODUCT_TYPE, ProductType.Switch);
+
+            ((FragmentActivity) v.getContext())
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_navigation_layout, ProductPageFragment.class, bundle)
+                    .commit();
+        });
+
     }
 
     @Override
@@ -57,14 +75,18 @@ public class SwichItemListRecyclerViewAdapter extends RecyclerView.Adapter<Swich
         public final TextView mKeywordsView;
         public final TextView mPriceView;
         public final ImageView mImageView;
+
+        public final LinearLayout mLayout;
         public Switch mItem;
+
 
         public ViewHolder(FragmentSwitchItemBinding binding) {
             super(binding.getRoot());
-            this.mShortTitleView = binding.switchItemShortTitle;
-            this.mKeywordsView = binding.switchItemKeywords;
-            this.mPriceView = binding.switchItemPrice;
-            this.mImageView = binding.switchItemImageView;
+            mShortTitleView = binding.switchItemShortTitle;
+            mKeywordsView = binding.switchItemKeywords;
+            mPriceView = binding.switchItemPrice;
+            mImageView = binding.switchItemImageView;
+            mLayout = binding.switchItemLayout;
         }
     }
 }

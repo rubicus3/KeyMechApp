@@ -61,6 +61,7 @@ public class KeycapItemListRecyclerViewAdapter extends RecyclerView.Adapter<Keyc
                     .getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.main_navigation_layout, ProductPageFragment.class, bundle)
+                    .addToBackStack("productpage")
                     .commit();
         });
     }

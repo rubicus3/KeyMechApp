@@ -60,6 +60,7 @@ public class SwichItemListRecyclerViewAdapter extends RecyclerView.Adapter<Swich
                     .getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.main_navigation_layout, ProductPageFragment.class, bundle)
+                    .addToBackStack("productpage")
                     .commit();
         });
 

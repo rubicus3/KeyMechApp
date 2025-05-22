@@ -53,6 +53,8 @@ public class CatalogPageFragment extends Fragment {
         getParentFragmentManager()
                 .beginTransaction()
                 .replace(R.id.main_navigation_layout ,class_, null)
+                .addToBackStack("productlistpage")
+
                 .commit();
 
     }
@@ -63,6 +65,7 @@ public class CatalogPageFragment extends Fragment {
         getParentFragmentManager()
                 .beginTransaction()
                 .replace(R.id.main_navigation_layout ,class_, bundle)
+                .addToBackStack("productlistpage")
                 .commit();
 
     }

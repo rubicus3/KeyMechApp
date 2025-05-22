@@ -60,6 +60,7 @@ public class KeyboardItemListRecyclerViewAdapter extends RecyclerView.Adapter<Ke
                     .getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.main_navigation_layout, ProductPageFragment.class, bundle)
+                    .addToBackStack("productpage")
                     .commit();
         });
     }

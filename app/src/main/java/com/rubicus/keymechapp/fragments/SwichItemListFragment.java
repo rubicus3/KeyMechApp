@@ -1,4 +1,4 @@
-package com.rubicus.keymechapp;
+package com.rubicus.keymechapp.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,6 +14,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
+import com.rubicus.keymechapp.R;
+import com.rubicus.keymechapp.adatpers.SwichItemListRecyclerViewAdapter;
+import com.rubicus.keymechapp.helper.KeyMechServiceGenerator;
+import com.rubicus.keymechapp.helper.Switch;
 
 import java.util.ArrayList;
 import retrofit2.Call;

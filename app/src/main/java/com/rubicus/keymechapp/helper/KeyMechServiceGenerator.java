@@ -1,4 +1,4 @@
-package com.rubicus.keymechapp;
+package com.rubicus.keymechapp.helper;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

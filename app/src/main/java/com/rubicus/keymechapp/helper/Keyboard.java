@@ -1,4 +1,4 @@
-package com.rubicus.keymechapp;
+package com.rubicus.keymechapp.helper;
 
 public class Keyboard extends Product {
     public String form_factor;

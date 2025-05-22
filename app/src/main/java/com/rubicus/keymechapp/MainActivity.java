@@ -1,18 +1,17 @@
 package com.rubicus.keymechapp;
 
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.rubicus.keymechapp.fragments.CatalogPageFragment;
+import com.rubicus.keymechapp.fragments.HomePageFragment;
 
 public class MainActivity extends AppCompatActivity {
 

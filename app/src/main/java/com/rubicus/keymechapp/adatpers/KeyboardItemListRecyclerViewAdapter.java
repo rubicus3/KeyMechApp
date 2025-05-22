@@ -1,28 +1,28 @@
-package com.rubicus.keymechapp;
+package com.rubicus.keymechapp.adatpers;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
-
+import com.rubicus.keymechapp.helper.Keyboard;
+import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.databinding.FragmentProductItemBinding;
-import com.rubicus.keymechapp.Keycap;
 import com.squareup.picasso.Picasso;
 
-import java.security.Key;
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link Keycap}.
+ * {@link RecyclerView.Adapter} that can display a {@link Keyboard}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class KeycapItemListRecyclerViewAdapter extends RecyclerView.Adapter<KeycapItemListRecyclerViewAdapter.ViewHolder> {
+public class KeyboardItemListRecyclerViewAdapter extends RecyclerView.Adapter<KeyboardItemListRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Keycap> mValues;
+    private final List<Keyboard> mValues;
 
-    public KeycapItemListRecyclerViewAdapter(List<Keycap> items) {
+    public KeyboardItemListRecyclerViewAdapter(List<Keyboard> items) {
         mValues = items;
     }
 
@@ -45,7 +45,6 @@ public class KeycapItemListRecyclerViewAdapter extends RecyclerView.Adapter<Keyc
                 .placeholder(R.drawable.ic_placeholder) // Optional
                 .fit()
                 .into(holder.mImageView);
-
     }
 
     @Override
@@ -59,7 +58,7 @@ public class KeycapItemListRecyclerViewAdapter extends RecyclerView.Adapter<Keyc
         public final TextView mPriceView;
         public final ImageView mImageView;
 
-        public Keycap mItem;
+        public Keyboard mItem;
 
 
         public ViewHolder(FragmentProductItemBinding binding) {

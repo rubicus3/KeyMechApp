@@ -1,4 +1,4 @@
-package com.rubicus.keymechapp;
+package com.rubicus.keymechapp.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,16 +6,19 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.rubicus.keymechapp.placeholder.PlaceholderContent;
+import com.rubicus.keymechapp.R;
+import com.rubicus.keymechapp.adatpers.KeyboardItemListRecyclerViewAdapter;
+import com.rubicus.keymechapp.adatpers.KeycapItemListRecyclerViewAdapter;
+import com.rubicus.keymechapp.helper.KeyMechServiceGenerator;
+import com.rubicus.keymechapp.helper.Keyboard;
+import com.rubicus.keymechapp.helper.Keycap;
 
 import java.util.ArrayList;
 

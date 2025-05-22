@@ -1,4 +1,4 @@
-package com.rubicus.keymechapp;
+package com.rubicus.keymechapp.adatpers;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.rubicus.keymechapp.R;
+import com.rubicus.keymechapp.helper.Switch;
 import com.rubicus.keymechapp.databinding.FragmentSwitchItemBinding;
 import com.squareup.picasso.Picasso;
 

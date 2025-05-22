@@ -1,4 +1,4 @@
-package com.rubicus.keymechapp;
+package com.rubicus.keymechapp.fragments;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.rubicus.keymechapp.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ProductPage#newInstance} factory method to
+ * Use the {@link ProductPageFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ProductPage extends Fragment {
+public class ProductPageFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class ProductPage extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ProductPage() {
+    public ProductPageFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class ProductPage extends Fragment {
      * @return A new instance of fragment ProductPage.
      */
     // TODO: Rename and change types and number of parameters
-    public static ProductPage newInstance(String param1, String param2) {
-        ProductPage fragment = new ProductPage();
+    public static ProductPageFragment newInstance(String param1, String param2) {
+        ProductPageFragment fragment = new ProductPageFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

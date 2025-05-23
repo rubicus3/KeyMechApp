@@ -65,6 +65,10 @@ public class CartItemListFragment extends Fragment implements CartItemListRecycl
             cartItemListRecyclerViewAdapter.notifyDataSetChanged();
         });
 
+        view.findViewById(R.id.button_go_pay).setOnClickListener(v -> {
+            getParentFragmentManager().beginTransaction().replace(R.id.main_navigation_layout, OrderPlacementFragment.class, null).commit();
+        });
+
         return view;
     }
 

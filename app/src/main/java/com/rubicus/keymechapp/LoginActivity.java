@@ -1,6 +1,9 @@
 package com.rubicus.keymechapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +13,13 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 
 import com.rubicus.keymechapp.fragments.AuthorizationFragment;
+import com.rubicus.keymechapp.helper.KeyMechService;
+import com.rubicus.keymechapp.helper.KeyMechServiceGenerator;
+import com.rubicus.keymechapp.schemas.User;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -23,11 +33,32 @@ public class LoginActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        tryLogin();
 
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         fragmentManager.beginTransaction().replace(R.id.login_layout_manager, AuthorizationFragment.class, null).commit();
+    }
 
+    private void tryLogin() {
+        Log.d("TAG", "tryLogin: Attemting login...");
 
+        String token = SharedPreferencesManager.getInstance(this).getToken();
+
+        KeyMechServiceGenerator.service.getCurrentUser(token).enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                if(response.isSuccessful()) {
+                    Log.d("TAG", "tryLogin: Login successful!");
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+                Log.d("TAG", "tryLogin: Login unsuccessfull.");
+            }
+        });
     }
 }

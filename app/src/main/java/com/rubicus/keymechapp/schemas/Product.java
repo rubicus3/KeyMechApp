@@ -1,4 +1,4 @@
-package com.rubicus.keymechapp.helper;
+package com.rubicus.keymechapp.schemas;
 
 import java.util.HashMap;
 

@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.databinding.FragmentProductItemBinding;
 import com.rubicus.keymechapp.fragments.ProductPageFragment;
-import com.rubicus.keymechapp.helper.Keycap;
-import com.rubicus.keymechapp.helper.ProductType;
+import com.rubicus.keymechapp.schemas.Keycap;
+import com.rubicus.keymechapp.schemas.ProductType;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

@@ -17,8 +17,8 @@ import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.adatpers.KeyboardItemListRecyclerViewAdapter;
 import com.rubicus.keymechapp.adatpers.KeycapItemListRecyclerViewAdapter;
 import com.rubicus.keymechapp.helper.KeyMechServiceGenerator;
-import com.rubicus.keymechapp.helper.Keyboard;
-import com.rubicus.keymechapp.helper.Keycap;
+import com.rubicus.keymechapp.schemas.Keyboard;
+import com.rubicus.keymechapp.schemas.Keycap;
 
 import java.util.ArrayList;
 

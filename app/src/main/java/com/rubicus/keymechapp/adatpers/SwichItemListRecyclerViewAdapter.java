@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.fragments.ProductPageFragment;
-import com.rubicus.keymechapp.helper.ProductType;
-import com.rubicus.keymechapp.helper.Switch;
+import com.rubicus.keymechapp.schemas.ProductType;
+import com.rubicus.keymechapp.schemas.Switch;
 import com.rubicus.keymechapp.databinding.FragmentSwitchItemBinding;
 import com.squareup.picasso.Picasso;
 

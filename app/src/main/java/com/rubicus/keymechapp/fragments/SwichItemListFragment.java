@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,7 @@ import android.view.ViewGroup;
 import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.adatpers.SwichItemListRecyclerViewAdapter;
 import com.rubicus.keymechapp.helper.KeyMechServiceGenerator;
-import com.rubicus.keymechapp.helper.Switch;
+import com.rubicus.keymechapp.schemas.Switch;
 
 import java.util.ArrayList;
 import retrofit2.Call;

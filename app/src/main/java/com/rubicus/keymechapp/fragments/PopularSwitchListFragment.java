@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.adatpers.SwichItemListRecyclerViewAdapter;
 import com.rubicus.keymechapp.helper.KeyMechServiceGenerator;
-import com.rubicus.keymechapp.helper.Switch;
+import com.rubicus.keymechapp.schemas.Switch;
 
 import java.util.ArrayList;
 

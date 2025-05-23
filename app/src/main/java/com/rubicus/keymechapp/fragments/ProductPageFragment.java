@@ -14,16 +14,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rubicus.keymechapp.R;
-import com.rubicus.keymechapp.helper.KeyMechService;
 import com.rubicus.keymechapp.helper.KeyMechServiceGenerator;
-import com.rubicus.keymechapp.helper.Keyboard;
-import com.rubicus.keymechapp.helper.Keycap;
-import com.rubicus.keymechapp.helper.Product;
-import com.rubicus.keymechapp.helper.ProductType;
-import com.rubicus.keymechapp.helper.Switch;
+import com.rubicus.keymechapp.schemas.Keyboard;
+import com.rubicus.keymechapp.schemas.Keycap;
+import com.rubicus.keymechapp.schemas.ProductType;
+import com.rubicus.keymechapp.schemas.Switch;
 import com.squareup.picasso.Picasso;
 
-import java.util.Dictionary;
 import java.util.Map;
 
 import retrofit2.Call;

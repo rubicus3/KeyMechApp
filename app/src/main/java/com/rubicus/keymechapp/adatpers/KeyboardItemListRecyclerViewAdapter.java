@@ -11,10 +11,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rubicus.keymechapp.fragments.ProductPageFragment;
-import com.rubicus.keymechapp.helper.Keyboard;
+import com.rubicus.keymechapp.schemas.Keyboard;
 import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.databinding.FragmentProductItemBinding;
-import com.rubicus.keymechapp.helper.ProductType;
+import com.rubicus.keymechapp.schemas.ProductType;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

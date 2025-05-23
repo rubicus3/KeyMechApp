@@ -1,5 +1,9 @@
 package com.rubicus.keymechapp.helper;
 
+import com.rubicus.keymechapp.schemas.Keyboard;
+import com.rubicus.keymechapp.schemas.Keycap;
+import com.rubicus.keymechapp.schemas.Switch;
+
 import java.util.ArrayList;
 
 import retrofit2.Call;

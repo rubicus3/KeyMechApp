@@ -205,7 +205,7 @@
             android:paddingVertical="5dp">
 
             <TextView
-                android:id="@+id/r3shuipqcq6h"
+                android:id="@+id/button_amount_subtract"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -220,10 +220,10 @@
                 android:layout_weight="1" />
 
             <TextView
-                android:id="@+id/rlhwfl7depso"
+                android:id="@+id/text_box_amount_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10"
+                android:text="1"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -234,6 +234,7 @@
                 android:layout_weight="1" />
 
             <TextView
+                android:id="@+id/button_amount_add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="18dp"

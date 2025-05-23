@@ -7,7 +7,7 @@ interface ProductMethods {
 
 }
 
-public abstract class Product implements ProductMethods{
+public class Product implements ProductMethods{
     public Integer id;
     public String title;
     public String manufacturer;
@@ -15,8 +15,23 @@ public abstract class Product implements ProductMethods{
     public String description;
     public HashMap<String, String> characteristics;
     public String image_name;
+    public Integer amount = 1;
 
     public String getPrice() {
         return String.format("%.2f", price * 80.63) + " ₽";
+    }
+
+    @Override
+    public String getKeywords() {
+        return manufacturer;
+    }
+
+    public void setAmount (Integer amount) {
+        if(amount < 1) {
+            this.amount = 1;
+        }
+        else {
+            this.amount = amount;
+        }
     }
 }

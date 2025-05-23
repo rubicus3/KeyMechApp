@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +14,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.rubicus.keymechapp.CartManager;
 import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.helper.KeyMechServiceGenerator;
 import com.rubicus.keymechapp.schemas.Keyboard;
 import com.rubicus.keymechapp.schemas.Keycap;
+import com.rubicus.keymechapp.schemas.Product;
 import com.rubicus.keymechapp.schemas.ProductType;
 import com.rubicus.keymechapp.schemas.Switch;
 import com.squareup.picasso.Picasso;
@@ -44,20 +47,21 @@ public class ProductPageFragment extends Fragment {
     private Integer productId;
     private ProductType productType;
 
+    private Integer amount;
+    private Product product;
+    ImageView productImage;
+    TextView productKeywords;
+    TextView productTitle;
+    TextView productPrice;
+    TextView textAmount;
+    LinearLayout characteristicsLayout;
 
     public ProductPageFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProductPage.
-     */
-    // TODO: Rename and change types and number of parameters
+
+
     public static ProductPageFragment newInstance(String param1, ProductType param2) {
         ProductPageFragment fragment = new ProductPageFragment();
         Bundle args = new Bundle();
@@ -82,95 +86,98 @@ public class ProductPageFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        productImage = view.findViewById(R.id.image_product);
+        productKeywords = view.findViewById(R.id.text_product_keywords);
+        productTitle = view.findViewById(R.id.text_product_title);
+        productPrice = view.findViewById(R.id.text_product_pice);
+        characteristicsLayout = view.findViewById(R.id.product_characteristics_list);
+        textAmount = view.findViewById(R.id.text_box_amount_);
 
-        ImageView productImage = view.findViewById(R.id.image_product);
-        TextView productKeywords = view.findViewById(R.id.text_product_keywords);
-        TextView productTitle = view.findViewById(R.id.text_product_title);
-        TextView productPrice = view.findViewById(R.id.text_product_pice);
+        view.findViewById(R.id.button_amount_add).setOnClickListener(v -> {
+            changeAmount(1);
+        });
 
-        TextView productDescription= view.findViewById(R.id.text_product_description);
+        view.findViewById(R.id.button_amount_subtract).setOnClickListener(v -> {
+            changeAmount(-1);
+        });
 
+        view.findViewById(R.id.button_amount_add).setOnClickListener(v -> {
+            CartManager.getInstance().addToCart(product);
+        });
 
         if (getArguments() != null) {
-            int productId = getArguments().getInt(PRODUCT_ID);
-            ProductType productType = (ProductType) getArguments().getSerializable(PRODUCT_TYPE);
-
-            if(productType == ProductType.Keyboard) {
-                KeyMechServiceGenerator.service.getKeyboard(productId).enqueue(new Callback<Keyboard>() {
-                    @Override
-                    public void onResponse(Call<Keyboard> call, Response<Keyboard> response) {
-                        Keyboard product = response.body();
-                        productKeywords.setText(product.getKeywords());
-                        productTitle.setText(product.title);
-                        productPrice.setText(product.getPrice());
-                        productDescription.setText(product.description);
-                        fillCharacteristics(view, product.characteristics);
-
-                        Picasso.get()
-                                .load("http://10.0.2.2:8080/image/" + product.image_name)
-                                .placeholder(R.drawable.ic_placeholder)
-                                .into(productImage);
-                    }
-
-                    @Override
-                    public void onFailure(Call<Keyboard> call, Throwable t) {
-                        t.printStackTrace();
-                    }
-                });
-            } else if (productType == ProductType.Switch) {
-                KeyMechServiceGenerator.service.getSwitch(productId).enqueue(new Callback<Switch>() {
-                    @Override
-                    public void onResponse(Call<Switch> call, Response<Switch> response) {
-                        Switch product = response.body();
-                        productKeywords.setText(product.getKeywords());
-                        productTitle.setText(product.title);
-                        productPrice.setText(product.getPrice());
-                        productDescription.setText(product.description);
-                        fillCharacteristics(view, product.characteristics);
-
-                        Picasso.get()
-                                .load("http://10.0.2.2:8080/image/" + product.image_name)
-                                .placeholder(R.drawable.ic_placeholder)
-                                .into(productImage);
-                    }
-
-                    @Override
-                    public void onFailure(Call<Switch> call, Throwable t) {
-                        t.printStackTrace();
-                    }
-                });
-            }
-
-            else if (productType == ProductType.Keycap) {
-                KeyMechServiceGenerator.service.getKeycap(productId).enqueue(new Callback<Keycap>() {
-                    @Override
-                    public void onResponse(Call<Keycap> call, Response<Keycap> response) {
-                        Keycap product = response.body();
-                        productKeywords.setText(product.getKeywords());
-                        productTitle.setText(product.title);
-                        productPrice.setText(product.getPrice());
-                        productDescription.setText(product.description);
-                        fillCharacteristics(view, product.characteristics);
-
-                        Picasso.get()
-                                .load("http://10.0.2.2:8080/image/" + product.image_name)
-                                .placeholder(R.drawable.ic_placeholder)
-                                .into(productImage);
-                    }
-
-                    @Override
-                    public void onFailure(Call<Keycap> call, Throwable t) {
-                        t.printStackTrace();
-                    }
-                });
-            }
+            getProduct(view);
         }
-
     }
 
-    private void fillCharacteristics(View view, Map<String, String> characteristics) {
-        LinearLayout characteristicsLayout = view.findViewById(R.id.product_characteristics_list);
+    private void getProduct(View view) {
+        int productId = getArguments().getInt(PRODUCT_ID);
+        ProductType productType = (ProductType) getArguments().getSerializable(PRODUCT_TYPE);
 
+        if(productType == ProductType.Keyboard) {
+            KeyMechServiceGenerator.service.getKeyboard(productId).enqueue(new Callback<Keyboard>() {
+                @Override
+                public void onResponse(Call<Keyboard> call, Response<Keyboard> response) {
+                    Product product = response.body();
+                    setProduct(product);
+                    fillProduct(view);
+                }
+
+                @Override
+                public void onFailure(Call<Keyboard> call, Throwable t) {
+                    t.printStackTrace();
+                }
+            });
+        } else if (productType == ProductType.Switch) {
+            KeyMechServiceGenerator.service.getSwitch(productId).enqueue(new Callback<Switch>() {
+                @Override
+                public void onResponse(Call<Switch> call, Response<Switch> response) {
+                    Product product = response.body();
+                    setProduct(product);
+                    fillProduct(view);
+                }
+
+                @Override
+                public void onFailure(Call<Switch> call, Throwable t) {
+                    t.printStackTrace();
+                }
+            });
+        }
+
+        else if (productType == ProductType.Keycap) {
+            KeyMechServiceGenerator.service.getKeycap(productId).enqueue(new Callback<Keycap>() {
+                @Override
+                public void onResponse(Call<Keycap> call, Response<Keycap> response) {
+                    Product product = response.body();
+                    setProduct(product);
+                    fillProduct(view);
+                }
+
+                @Override
+                public void onFailure(Call<Keycap> call, Throwable t) {
+                    t.printStackTrace();
+                }
+            });
+        }
+    }
+    private void setProduct(Product product) {
+        Log.d("TAG", "setProduct: " + product.title);
+        this.product = product;
+    }
+    private void fillProduct(View view) {
+        TextView productDescription= view.findViewById(R.id.text_product_description);
+        productKeywords.setText(product.getKeywords());
+        productTitle.setText(product.title);
+        productPrice.setText(product.getPrice());
+        productDescription.setText(product.description);
+        fillCharacteristics(view, product.characteristics);
+
+        Picasso.get()
+                .load("http://10.0.2.2:8080/image/" + product.image_name)
+                .placeholder(R.drawable.ic_placeholder)
+                .into(productImage);
+    }
+    private void fillCharacteristics(View view, Map<String, String> characteristics) {
         for (String i : characteristics.keySet()) {
             LayoutInflater inflater1 = LayoutInflater.from(requireContext());
             View characteristicView = inflater1.inflate(R.layout.characteristics_item, characteristicsLayout, false);
@@ -184,4 +191,12 @@ public class ProductPageFragment extends Fragment {
             characteristicsLayout.addView(characteristicView);
         }
     }
+
+    private void changeAmount(int amount) {
+        product.setAmount(product.amount + amount);
+
+
+        textAmount.setText(product.amount.toString());
+    }
+
 }

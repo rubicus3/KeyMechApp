@@ -58,14 +58,20 @@ public class AuthorizationFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        view.findViewById(R.id.button_register_link).setOnClickListener(v -> {
+            getParentFragmentManager().beginTransaction().replace(R.id.login_layout_manager, RegistrationFragment.class, null).commit();
+        });
+
+
+
         view.findViewById(R.id.button_login).setOnClickListener(v -> {
-            EditText editNumber = (EditText) view.findViewById(R.id.input_phone);
-            EditText editPassword = (EditText) view.findViewById(R.id.input_password);
+            EditText editNumber = view.findViewById(R.id.input_phone);
+            EditText editPassword = view.findViewById(R.id.input_password);
+
 
             String number = editNumber.getText().toString();
             String password = editPassword.getText().toString();
 
-            Log.d("TAG", "onViewCreated: " + number + " "+ password);
 
             KeyMechServiceGenerator.service.authorize("password", number, password).enqueue(new Callback<Token>() {
                 @Override
@@ -77,7 +83,7 @@ public class AuthorizationFragment extends Fragment {
                         startActivity(intent);
                     }
                     if(!response.isSuccessful()) {
-                        Toast.makeText(getContext(), "bdfssbdf", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
 
                     }
                 }

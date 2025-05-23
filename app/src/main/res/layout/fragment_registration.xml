@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:gravity="center"
     tools:context=".fragments.RegistrationFragment">
 
     <TextView
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="24dp"
-        android:text="Авторизация"
+        android:text="Регистрация"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -46,7 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:hint="Номер телефона">
+        android:hint="Фамилия">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_surname"
@@ -85,7 +86,7 @@
 
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -94,7 +95,7 @@
         android:text="Зарегистрироваться" />
 
     <TextView
-        android:id="@+id/button_register_link"
+        android:id="@+id/button_authorization_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

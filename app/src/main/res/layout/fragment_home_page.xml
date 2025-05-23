@@ -12,6 +12,15 @@
         android:layout_height="match_parent"
         android:background="#FFFFFF"
         android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:layout_margin="30dp"
+            android:src="@drawable/logo"/>
+
         <TextView
             android:id="@+id/rf4zvmcgcsaf"
             android:textColor="#000000"
@@ -28,17 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
-        <TextView
-            android:id="@+id/rhiyvs4w3g4"
-            android:textColor="#000000"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Избранные товары"
-            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"

@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.rubicus.keymechapp.fragments.AccountPageFragment;
+import com.rubicus.keymechapp.fragments.CartItemListFragment;
 import com.rubicus.keymechapp.fragments.CatalogPageFragment;
 import com.rubicus.keymechapp.fragments.HomePageFragment;
 
@@ -61,7 +62,13 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.top_button_back).setOnClickListener(v -> {
             fragmentManager.popBackStack();
+        });
 
+        findViewById(R.id.top_button_cart).setOnClickListener(v -> {
+            fragmentManager.beginTransaction()
+                    .replace(R.id.main_navigation_layout, CartItemListFragment.class, null)
+                    .addToBackStack("cart")
+                    .commit();
         });
     }
 }

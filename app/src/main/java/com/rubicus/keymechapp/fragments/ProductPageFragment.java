@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.rubicus.keymechapp.CartManager;
+import com.rubicus.keymechapp.CartViewModel;
 import com.rubicus.keymechapp.R;
 import com.rubicus.keymechapp.helper.KeyMechServiceGenerator;
 import com.rubicus.keymechapp.schemas.Keyboard;
@@ -42,12 +43,14 @@ public class ProductPageFragment extends Fragment {
     public static final String PRODUCT_ID = "product-id";
     public static final String PRODUCT_TYPE = "product-type";
 
+    CartViewModel cartViewModel;
+
 
     // TODO: Rename and change types of parameters
     private Integer productId;
     private ProductType productType;
 
-    private Integer amount;
+    private Integer amount = 1;
     private Product product;
     ImageView productImage;
     TextView productKeywords;
@@ -94,20 +97,27 @@ public class ProductPageFragment extends Fragment {
         textAmount = view.findViewById(R.id.text_box_amount_);
 
         view.findViewById(R.id.button_amount_add).setOnClickListener(v -> {
-            changeAmount(1);
+            amount += 1;
+            textAmount.setText(amount.toString());
         });
 
         view.findViewById(R.id.button_amount_subtract).setOnClickListener(v -> {
-            changeAmount(-1);
-        });
+            amount -= 1;
+            if(amount < 1) amount = 1;
+            textAmount.setText(amount.toString());
 
-        view.findViewById(R.id.button_amount_add).setOnClickListener(v -> {
-            CartManager.getInstance().addToCart(product);
         });
-
         if (getArguments() != null) {
             getProduct(view);
         }
+
+        cartViewModel = new ViewModelProvider(requireActivity()).get(CartViewModel.class);
+
+        view.findViewById(R.id.button_cart_add).setOnClickListener(v -> {
+            product.amount = amount;
+            Log.d("TAG", "tyrtignjkerngkngerk: " + product);
+            cartViewModel.addToCart(product);
+        });
     }
 
     private void getProduct(View view) {
@@ -135,6 +145,7 @@ public class ProductPageFragment extends Fragment {
                     Product product = response.body();
                     setProduct(product);
                     fillProduct(view);
+
                 }
 
                 @Override
@@ -168,7 +179,7 @@ public class ProductPageFragment extends Fragment {
         TextView productDescription= view.findViewById(R.id.text_product_description);
         productKeywords.setText(product.getKeywords());
         productTitle.setText(product.title);
-        productPrice.setText(product.getPrice());
+        productPrice.setText(product.getPriceString());
         productDescription.setText(product.description);
         fillCharacteristics(view, product.characteristics);
 
@@ -192,11 +203,5 @@ public class ProductPageFragment extends Fragment {
         }
     }
 
-    private void changeAmount(int amount) {
-        product.setAmount(product.amount + amount);
-
-
-        textAmount.setText(product.amount.toString());
-    }
 
 }

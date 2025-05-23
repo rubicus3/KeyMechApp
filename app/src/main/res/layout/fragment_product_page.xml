@@ -120,7 +120,8 @@
                         android:layout_marginHorizontal="15dp"
                         android:text="Plate Mount MX1A-51NN\nPlate Mount RGB MX1A-51NA\nPCB Mount MX1A-51NB\nPCB Mount RGB MX1A-51NB\n45g actuation force\n1.20mm pretravel\n3.40mm total travel\nPOM stem\nNylon top and bottom housing\nStainless steel spring"
                         android:textColor="#000000"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -212,7 +213,9 @@
                 android:text="-"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"
+                />
 
             <View
                 android:layout_width="0dp"
@@ -241,9 +244,12 @@
                 android:text="+"
                 android:textColor="#000000"
                 android:textSize="32sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"
+                />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/button_cart_add"
             android:layout_width="54dp"
             android:layout_height="54dp"
             android:background="@drawable/abwfveawefvwvfewfve"
@@ -255,6 +261,8 @@
                 android:layout_width="match_parent"
                 android:scaleType="fitXY"
                 android:src="@drawable/cart_outline"
+                android:background="?android:attr/selectableItemBackground"
+
                 />
         </LinearLayout>
 

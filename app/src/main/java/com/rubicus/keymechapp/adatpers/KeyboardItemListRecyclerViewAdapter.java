@@ -43,7 +43,7 @@ public class KeyboardItemListRecyclerViewAdapter extends RecyclerView.Adapter<Ke
         holder.mItem = mValues.get(position);
         holder.mTitleView.setText(mValues.get(position).title);
         holder.mKeywordsView.setText(mValues.get(position).getKeywords());
-        holder.mPriceView.setText(mValues.get(position).getPrice());
+        holder.mPriceView.setText(mValues.get(position).getPriceString());
 
         Picasso.get()
                 .load("http://10.0.2.2:8080/image/" + mValues.get(position).image_name)

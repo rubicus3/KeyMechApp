@@ -1,5 +1,7 @@
 package com.rubicus.keymechapp.schemas;
 
+import androidx.annotation.NonNull;
+
 import java.util.HashMap;
 
 interface ProductMethods {
@@ -17,8 +19,11 @@ public class Product implements ProductMethods{
     public String image_name;
     public Integer amount = 1;
 
-    public String getPrice() {
-        return String.format("%.2f", price * 80.63) + " ₽";
+    public Float getPriceRubles() {
+        return price * 80.63f;
+    }
+    public String getPriceString() {
+        return String.format("%.2f", getPriceRubles()) + " ₽";
     }
 
     @Override
@@ -33,5 +38,11 @@ public class Product implements ProductMethods{
         else {
             this.amount = amount;
         }
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return title;
     }
 }

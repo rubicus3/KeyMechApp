@@ -1,9 +1,14 @@
 package com.rubicus.keymechapp.schemas;
 
-public class Token{
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Token implements Serializable {
     public String access_token;
     public String token_type;
-    public String get_full_token() {
+    public String getFullToken() {
         return token_type + " " + access_token;
     }
+
 }

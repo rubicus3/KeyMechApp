@@ -23,8 +23,8 @@ import retrofit2.http.Query;
 public interface KeyMechService {
 
     @FormUrlEncoded
-    @POST("token")
-    Call<String> getToken(
+    @POST("/token")
+    Call<Token> authorize(
         @Field("grant_type") String grantType,
         @Field("username") String username,
         @Field("password") String password

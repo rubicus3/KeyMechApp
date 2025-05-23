@@ -81,20 +81,20 @@ public class OrderPlacementFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         TextView textAddress = view.findViewById(R.id.edit_order_address);
-        
-        
-        
+        TextView textTotalSum = view.findViewById(R.id.text_total_price);
+
+        CartViewModel cartViewModel = new ViewModelProvider(requireActivity()).get(CartViewModel.class);
+
+        textTotalSum.setText(String.format("%.2f", cartViewModel.getTotalPrice()) + " ₽");
+
         view.findViewById(R.id.button_pay).setOnClickListener(v -> {
-            CartViewModel cartViewModel = new ViewModelProvider(requireActivity()).get(CartViewModel.class);
-            
+
             String token = SharedPreferencesManager.getInstance(getContext()).getToken();
             Order order = new Order();
             order.id = 0;
             order.user_id = 0;
             order.address = textAddress.getText().toString();
             order.total_sum = cartViewModel.getTotalPrice();
-            TextView totlaPfi = view.findViewById(R.id.text_total_price);
-            totlaPfi.setText(String.format("%.2f",cartViewModel.getTotalPrice()) + " ₽");
             KeyMechServiceGenerator.service.createOrder(token, order).enqueue(new Callback<Order>() {
                 @Override
                 public void onResponse(Call<Order> call, Response<Order> response) {

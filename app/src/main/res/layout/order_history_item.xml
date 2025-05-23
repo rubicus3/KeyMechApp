@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rc32vha6ialc"
+    android:background="@drawable/s0000001asw1cr6bffffff"
+    android:paddingVertical="5dp"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/rttrspgo4kj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginHorizontal="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/text_order_history_date"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="3 мая 2025, 03:03"
+            />
+        <LinearLayout
+            android:id="@+id/rtp45tkelm6n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cr30babff9a"
+            android:paddingBottom="1dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/rw878vj1ums"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_height="wrap_content"
+                android:layout_width="78dp"
+                android:gravity="center"
+                android:text="Оплачен"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/rp6c0csiaqa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_order_history_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:text="Москва, Прсопект Вернадского д. 78, кв. 1"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_order_history_total_price"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="15 697.00 ₽"
+            />
+    </LinearLayout>
+</LinearLayout>

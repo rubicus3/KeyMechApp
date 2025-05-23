@@ -28,44 +28,10 @@
 
             app:tint="@color/white"
             android:padding="3dp"/>
-        <LinearLayout
+        <View
+            android:layout_height="0dp"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:layout_marginEnd="6dp"
-            android:background="@color/onPrimary"
-            android:orientation="horizontal">
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/ronk58vpr9w"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginHorizontal="5dp"
-                android:src="@drawable/magnify"
-                app:tint="@color/white"
-                android:padding="3dp"
-                android:scaleType="fitXY"
-                />
-            <TextView
-                android:textColor="#CCCCCC"
-                android:textSize="14sp"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:text="Поиск"
-                />
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/top_button_filter"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginEnd="5dp"
-                android:src="@drawable/filter"
-                app:tint="@color/white"
-                android:padding="3dp"
-
-                android:scaleType="fitXY"
-                />
-        </LinearLayout>
+            android:layout_weight="1"/>
         <ImageView
             android:id="@+id/top_button_cart"
             android:layout_width="34dp"
